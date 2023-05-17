@@ -37,6 +37,20 @@ resource "azurerm_container_group" "example" {
       port     = 80
       protocol = "TCP"
     }
+    environment_variables = [
+      {
+        name  = "REGISTRY_SERVER"
+        value = "your-registry-server"
+      },
+      {
+        name  = "REGISTRY_USERNAME"
+        value = "your-registry-username"
+      },
+      {
+        name  = "REGISTRY_PASSWORD"
+        value = "your-registry-password"
+      },
+    ]
   }
 
   ip_address {
